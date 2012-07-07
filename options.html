@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Weblogger UserID Setting</title>
+  </head>
+  <script type="text/javascript">
+
+  // Saves options to localStorage.
+  function save_options() {
+    localStorage.setItem("weblogger_id",document.getElementById("userId").value);
+
+    // Automatically close options window after saving ID
+    document.write('<html><body><h3>ID saved.</h3></body></html>');
+    
+    setTimeout(function(){
+    		window.close();
+    }, 1500);
+  }
+
+  // Restores select box state to saved value from localStorage.
+  function restore_options() {
+    var userId = localStorage["weblogger_id"];
+
+    if (! userId) {
+      return;
+    }
+    document.getElementById("userId").value=userId;
+  }
+  </script>
+
+  <body onload="restore_options()">
+
+    Weblogger UserID:
+    <input type="text" id="userId"/>
+
+    <br>
+    <button onclick="save_options()">Save</button>
+  </body>
+</html>
