@@ -7,9 +7,10 @@
   // Saves options to localStorage.
   function save_options() {
     localStorage.setItem("weblogger_id",document.getElementById("userId").value);
+    localStorage.setItem("api_url",document.getElementById("apiUrl").value);
 
     // Automatically close options window after saving ID
-    document.write('<html><body><h3>ID saved.</h3></body></html>');
+    document.write('<html><body><h3>Config saved.</h3></body></html>');
     
     setTimeout(function(){
     		window.close();
@@ -19,19 +20,17 @@
   // Restores select box state to saved value from localStorage.
   function restore_options() {
     var userId = localStorage["weblogger_id"];
+    var apiUrl = localStorage["api_url"];
 
-    if (! userId) {
-      return;
-    }
     document.getElementById("userId").value=userId;
+    document.getElementById("apiUrl").value=apiUrl;
   }
   </script>
 
   <body onload="restore_options()">
-
-    Weblogger UserID:
-    <input type="text" id="userId"/>
-
+    <table>
+      <tr><td>UserID:</td><td><input type="text" id="userId"/></td>
+      <tr><td>API URL:</td><td><input type="text" id="apiUrl"/></td>
     <br>
     <button onclick="save_options()">Save</button>
   </body>

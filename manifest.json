@@ -5,7 +5,7 @@
   "icons":{"128":"icons/app_icon_128.png"},
   
   "permissions": [
-  	"http://www.google.co.jp/",
+  	"<all_urls>",
   	"tabs"
   ],
   
@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*"],
-      "js": ["scripts/injection.js"]
+      "js": ["scripts/injection.js","scripts/ecl_new.js"]
     }
   ],
   
