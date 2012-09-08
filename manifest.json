@@ -14,7 +14,7 @@
   "content_scripts": [
     {
       "matches": ["http://*/*"],
-      "js": ["scripts/injection.js","scripts/ecl_new.js"]
+      "js": ["scripts/injection.js"]
     }
   ],
   

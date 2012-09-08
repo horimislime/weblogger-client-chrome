@@ -23,7 +23,7 @@ function updateBadge(userId){
 
 function commitUrl(userId,curUrl,pageTitle,pageReferrer){
 	//Schema to ignore
-	["https","chrome","about","file"].forEach(function(scheme){
+	["chrome","about","file"].forEach(function(scheme){
 		if(scheme==curUrl.split(":",2)){
 			return;
 		}
