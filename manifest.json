@@ -1,5 +1,5 @@
 {
-  "manifest_version":2,
+  "manifest_version":1,
   "name": "WebLogger",
   "version": "0.2",
   "description": "Weblog uploader",
